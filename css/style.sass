@@ -1,0 +1,538 @@
+@import 'fonts'
+
+$darkTextColor: #222
+$lightTextColor: #fff
+$accentColor: #F16D7F
+
+=fontProp($size, $weight, $lineHeight, $color, $family: 'Lato')
+	font-family: $family
+	font-size: $size
+	font-weight: $weight
+	line-height: $lineHeight
+	color: $color
+
+=linksSize()
+	display: block
+	line-height: 0
+	
+*
+	margin: 0
+	padding: 0
+
+a
+	text-decoration: none
+
+ul
+	list-style: none
+
+input:focus
+	outline: none
+
+.center
+	padding: 0 calc(50% - 570px)
+
+.header
+	display: flex
+	justify-content: space-between
+	align-items: center
+	height: 75px
+	background-color: $darkTextColor
+
+	&__list
+		display: flex
+		align-items: center
+
+	&__item:hover path
+		fill: $accentColor
+
+.header-left .header__item:not(:last-of-type)
+	margin-right: 40px
+
+.header-right .header__item:not(:last-of-type)
+	margin-right: 30px
+
+.brand
+	display: flex
+	background-color: #F1E4E6
+	margin-bottom: 63px
+
+	&__img
+		width: 50%
+
+.brand-content
+	align-self: center
+
+	&__header
+		margin-left: 64px
+		padding-left: 10px
+		border-left: 12px solid $accentColor
+		+fontProp(48px, 900, 58px, $darkTextColor)
+		text-transform: uppercase
+
+	&__header_little
+		display: block
+		font-size: 32px
+		line-height: 38px
+		font-weight: 700
+
+.pink-text
+	color: $accentColor
+
+.sale
+	margin-bottom: 97px
+	display: block
+
+	img
+		width: 100%
+
+	&__list
+		display: flex
+		justify-content: space-between
+		margin-bottom: 30px
+
+	&__item
+		display: block
+		position: relative
+
+		a 
+			+linksSize
+
+	&__item-text
+		position: absolute
+		top: 105px
+		left: 103px
+		width: 155px
+		+fontProp(16px, 400, 19px, $lightTextColor)
+		text-transform: uppercase
+		text-align: center
+
+	&__item-text_big 
+		display: block
+		+fontProp(24px, 700, 28px, $accentColor) 
+
+.second-row
+	position: relative
+
+	a 
+		+linksSize
+
+	.sale__item-text
+		top: 65px
+		left: 490px
+		width: 166px  
+
+.cards
+	margin-bottom: 95px
+
+	&__heading
+		+fontProp(30px, 400, 36px, $darkTextColor)
+		text-align: center
+
+	&__info
+		margin-top: 8px
+		margin-bottom: 48px
+		+fontProp(14px, 400, 17px, #9F9F9F)
+		text-align: center
+
+	&__list
+		display: flex
+		flex-wrap: wrap  
+
+	&__item
+		position: relative
+		display: flex
+		flex-direction: column
+		margin-bottom: 30px
+		width: 360px
+
+		>a
+			+linksSize
+
+		img
+			width: 100%
+
+		&:not(:nth-of-type(3n))
+				margin-right: 30px
+
+		&:hover 
+			img
+				filter: brightness(50%)
+
+			.cards__add-to-cart
+				display: block
+
+	&__add-to-cart
+		position: absolute
+		top: 188px
+		left: 135px
+		display: none
+		border: 1px solid #fff
+		padding: 12px
+		background: url(img/add-to-cart.svg) no-repeat 13px center
+		+fontProp(14px, 400, 17px, $lightTextColor)
+		cursor: pointer
+
+.product-content
+	padding: 25px 18px 20px
+	height: 100%
+	background-color: #F8F8F8
+
+	&__heading
+		margin-bottom: 12px
+		+fontProp(13px, 400, 16px, #000)
+		text-transform: uppercase
+
+	&__description
+		margin-bottom: 12px
+		+fontProp(14px, 300, 17px, #5D5D5D)
+	
+	&__price
+		font-size: 16px
+		line-height: 19px
+		font-weight: normal
+
+
+.btn
+	display: block
+	padding: 14px 38px
+	box-sizing: border-box
+	max-width: 213px
+	border: 1px solid $accentColor
+	+fontProp(16px, 400, 19px, $accentColor)
+	cursor: pointer
+
+.show-more-btn
+	margin: 0 auto
+	margin-top: 18px
+	text-transform: capitalize
+
+	&:hover
+		background-color: $accentColor
+		color: $lightTextColor
+		transition-duration: 0.5s
+
+.features
+	background-color: $darkTextColor
+
+	&__list
+		display: flex
+		padding: 103px 0
+		text-align: center
+
+	&__item
+		padding: 60px 25px 0
+		width: 360px
+
+		&:not(:last-of-type)
+			margin-right: 30px 
+
+	&__item-delivery
+		background: $darkTextColor url(../img/delivery_icon.svg) no-repeat top center
+	
+	&__item-sales
+		background: $darkTextColor url(../img/sales_icon.svg) no-repeat top center
+
+	&__item-qa
+		background: $darkTextColor url(../img/qa_icon.svg) no-repeat top center
+
+	&__item-heading
+		margin-bottom: 16px
+		+fontProp(20px, 400, 24px, $lightTextColor)	
+
+	&__item-description
+		+fontProp(14px, 300, 17px, $lightTextColor)	
+
+.subscribe-section
+	display: flex
+	padding-bottom: 156px
+	background: #F4F4F4 url(img/subscribe_bg.png) no-repeat
+
+	&__review
+		margin-top: 86px
+		width: 360px
+
+	&__review-img
+		display: block
+		margin: 0 auto
+
+	&__review-text
+		padding: 30px 5px 0
+		margin: 0 auto
+		box-sizing: border-box
+		+fontProp(20px, 400, 24px, $darkTextColor)
+		text-align: center
+
+	&__subscribe
+		margin-top: 145px
+		margin-left: 223px
+		width: 557px
+
+
+.subscribe
+	&__heading
+		+fontProp(24px, 700, 37px, $darkTextColor)	
+		text-transform: uppercase
+		text-align: center
+
+	&__content
+		+fontProp(18px, 400, 25px, $darkTextColor)	
+		text-transform: uppercase
+		text-align: center
+
+	&__form
+		margin: 0 auto
+		margin-top: 23px
+		width: 100%
+
+		input
+			padding: 7px 27px
+			border: none
+			font-size: 14px
+			line-height: 35px
+			font-weight: normal
+
+	&__form-group
+		margin: 0 auto
+		width: max-content
+		border: 0
+
+	&__inut
+		width: 66%
+		box-sizing: border-box
+		border-top-left-radius: 21px
+		border-bottom-left-radius: 21px
+		background-color: #E1E1E1
+		color: $darkTextColor
+		opacity: 0.67
+
+	&__button
+		margin-left: -5px
+		background-color: $accentColor
+		border-top-right-radius: 21px
+		border-bottom-right-radius: 21px
+		color: $lightTextColor
+		cursor: pointer
+
+.footer
+	display: flex
+	justify-content: space-between
+	padding-top: 24px
+	padding-bottom: 24px
+	background-color: $darkTextColor
+
+	&__copyright
+		align-self: center
+		+fontProp(16px, 400, 19px, $lightTextColor)
+
+	&__socials-list
+		display: flex
+
+	&__socials-item
+		width: 32px
+		height: 32px
+		background-color: $lightTextColor
+
+		&:not(:last-of-type)
+			margin-right: 7px
+
+	&__socials-link
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 100%
+		height: 100%
+
+		&:hover
+			background-color: $accentColor
+
+			path
+				fill: #fff
+
+@import 'catalog'
+
+
+// @media (max-width:1024px)
+//     .center
+//         padding: 0 calc(50% - 368px)
+
+//     .brand-content__header
+//         margin-left: 40px
+//         padding-left: 16px
+//         font-size: 44px
+//         line-height: 52px
+
+//     .brand-content__header_little
+//         font-size: 24px
+//         line-height: 28px
+
+//     .brand
+//         margin-bottom: 19px
+
+//     .sale__list
+//         margin-bottom: 19px
+
+//     .sale__item:not(:last-of-type)
+//         margin-right: 19px
+
+//     .sale__item-text
+//         top: 59px
+//         left: 39px
+
+//     .second-row .sale__item-text
+//         top: 33px
+//         left: 288px
+
+//     .cards__info
+//         margin-top: 3px
+
+//     .cards__item
+//         margin-bottom: 16px
+
+//     .cards__item:not(:nth-of-type(2n))
+//         margin-right: 16px
+
+//     .cards__item:nth-of-type(2n)
+//         margin-right: 0
+
+//     .product-content
+//         padding: 25px 16px 20px
+
+//     .product-content__description
+//         margin-bottom: 18px
+
+//     .cards
+//         margin-bottom: 65px
+
+//     .features__list
+//         flex-direction: column
+//         align-items: center
+//         padding-top: 48px
+//         padding-bottom: 64px
+
+//     .features__item:not(:last-of-type)
+//         margin-bottom: 48px
+//         margin-right: 0
+
+//     .subscribe-section
+//         flex-direction: column
+//         align-items: center
+//         padding-bottom: 140px
+//         background-position-y: bottom
+//         background-position-x: 20%
+
+//     .subscribe-section__subscribe
+//         margin-left: 0
+//         margin-top: 40px
+
+//     .subscribe-section__review
+//         margin-top: 60px
+
+//     .footer
+//         padding-top: 24px
+//         padding-bottom: 24px
+
+// @media (max-width: 737px)
+//     .center
+//         padding: 0 calc(50% - 171.5px)
+
+//     .header-right .header__item:not(:first-of-type)
+//         display: none
+
+//     .brand__img
+//         display: none
+
+//     .brand-content
+//         padding: 148px 0
+//         margin: 0 auto
+
+//     .brand-content__header
+//         margin: 0
+//         padding-left: 10px
+//         font-size: 38px
+//         line-height: 45px
+
+//     .brand-content__header_little
+//         font-size: 20px
+//         line-height: 24px
+
+//     .brand
+//         margin-bottom: 64px
+
+//     .sale__list
+//         flex-direction: column
+//         margin-bottom: 0
+
+//     .sale__item
+//         margin-right: 0 !important
+//         margin-bottom: 32px
+
+//     .sale__item-text
+//         top: 98px
+//         left: 94px
+
+//     .second-row
+//         overflow: hidden
+
+//     .sale__second-row-img
+//         position: relative
+//         left: -135px
+//         width: 170% !important
+//         height: 111px
+
+//     .second-row .sale__item-text
+//         top: 30px
+//         left: 92px
+
+//     .sale
+//         margin-bottom: 64px
+
+//     .cards__info
+//         margin-bottom: 64px
+
+//     .cards__item
+//         width: 343px
+//         margin-right: 0 !important
+
+//     .show-more-btn
+//         margin-top: 15px
+
+//     .features__item
+//         margin-right: 0
+//         width: initial
+
+//     .subscribe-section__subscribe
+//         margin-top: 60px
+//         width: initial
+
+//     .subscribe-section
+//         padding-bottom: 109px
+
+//     .footer
+//         flex-direction: column-reverse
+//         align-items: center
+//         padding-top: 43px
+//         padding-bottom: 9px
+
+//     .footer__socials
+//         margin-bottom: 40px
+
+// @media (max-width:320px)
+//     .center
+//         padding: 0 calc(50% - 155px)
+
+//     .subscribe-section__review
+//         width: initial
+
+//     .subscribe__inut
+//         width: 59%
+
+//     .subscribe__form-group
+//         width: initial
+//         margin-left: 10px
+
+//     .subscribe-section
+//         padding-bottom: 100px
+
+//     .footer
+//         padding-top: 43px
+//         padding-bottom: 9px
