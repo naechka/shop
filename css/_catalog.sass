@@ -1,0 +1,178 @@
+.new-arrivals
+	display: flex
+	padding-top: 60px
+	padding-bottom: 60px
+	justify-content: space-between
+	background-color: #F8F3F4
+
+	&__heading
+		+fontProp(24px, 400, 29px, $accentColor)
+		text-transform: uppercase
+
+.breadcrumbs
+	display: flex
+	align-items: center
+
+	&__list
+		display: flex
+		text-transform: uppercase
+		align-items: center
+
+	&__item
+		a
+			+fontProp(14px, 300, 17px, #636363)
+			&:visited
+				font-family: 'Lato'
+				color: #636363
+
+			&:link
+				font-family: 'Lato'
+				color: #636363
+
+		&:not(:last-of-type)::after
+			content: '/'
+			padding: 0 5px
+
+.active
+	+fontProp(14px, 700, 17px, $accentColor)
+
+.filter-block
+	display: flex
+	padding-top: 38px
+	padding-bottom: 64px
+
+summary
+	display: block
+	cursor: pointer
+	outline: none
+	&::-webkit-details-marker 
+  		display: none
+
+
+.filter
+	position: absolute
+	z-index: 1
+	background-color: #fff
+	padding: 13px 16px
+	margin-left: -13px
+	&:hover
+		.filter__name
+			color: $accentColor
+		.filter__filter-icon
+			path
+				fill: $accentColor
+
+	&__name
+		box-sizing: border-box
+		+fontProp(14px, 700, 16px, #000)
+		text-transform: uppercase
+		margin-bottom: 16px
+	
+	&[open]
+		width: 360px
+		-sizing: border-box
+		box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21)
+		.filter__name
+			color: $accentColor
+		.filter__filter-icon
+			path
+				fill: $accentColor
+
+	&__category
+		&:not(:last-of-type)
+			margin-bottom: 18px
+		&[open]
+			.filter__category-name
+				+fontProp(+14px, 400, 17px, $accentColor)
+
+	&__filter-icon
+		margin-left: 11px
+
+	&__category-name
+		text-transform: uppercase
+		+fontProp(+14px, 400, 17px, #6F6E6E)
+		border-left: 5px solid $accentColor
+		padding: 11px
+		border-bottom: 1px solid #EBEBEB
+
+		&:hover
+			color: $accentColor
+
+	&__list
+		padding: 24px 17px 6px
+
+	&__item
+		&:not(:last-of-type)
+			margin-bottom: 11px
+			
+	&__link
+		+fontProp(14px, 400, 16.8px, #6F6E6E)
+
+		&:hover
+			color: $accentColor
+
+.left-filters
+	display: flex
+	flex-grow: 2
+	justify-content: center
+	padding-top: 13px
+	&__filter
+		&:not(:last-of-type)
+			margin-right: 28px
+
+		&[open]
+			.left-filters__name
+				color: $accentColor
+				&::after
+					border-color: $accentColor
+					transform: rotate(135deg)
+					
+
+	&__name
+		display: flex
+		align-items: center
+		+fontProp(14px, 400, 16.8px, #6F6E6E)
+		text-transform: uppercase
+
+		&::after
+			content: ""
+			border-left: 2px solid #6F6E6E
+			border-bottom: 2px solid #6F6E6E
+			width: 5px
+			height: 5px
+			transform: rotate(-45deg)
+			margin-left: 10px
+			transition-property: transform
+			transition-duration: 0.5s
+
+		&:hover
+			color: $accentColor
+			&::after
+				border-color: $accentColor
+
+	&__list
+		position: absolute
+		z-index: 1
+		background-color: #fff
+		padding: 9px
+		box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21)
+		margin-top: 5px
+		margin-left: -9px
+		width: max-content
+
+	&__item
+		+fontProp(14px, 400, 16px, #6F6E6E)
+		margin-bottom: 10px
+
+	&__label
+		display: flex
+		align-items: center
+
+		&:hover
+			cursor: pointer
+
+	&__input
+		margin-right: 10px
+
+
+

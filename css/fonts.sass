@@ -1,0 +1,11 @@
+=font-face($fontFamily, $path, $weight, $style: normal)
+    @font-face 
+        font-family: $fontFamily
+        font-style: $style
+        font-weight: $weight
+        src: local('#{$fontFamily}'), url('#{$path}.woff2') format('woff2'), url('#{$path}.woff') format('woff'), url('#{$path}.ttf') format('ttf')
+
++font-face('Lato', '../fonts/Lato-Black', 900)
++font-face('Lato', '../fonts/Lato-Bold', 700)
++font-face('Lato', '../fonts/Lato-Regular', 400)
++font-face('Lato', '../fonts/Lato-Light', 300)   
