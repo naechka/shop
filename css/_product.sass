@@ -1,0 +1,111 @@
+.product-photo
+    width: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    background-color: #F7F7F7
+    padding-bottom: 64px
+
+    &__arrow-wrapper-right
+        justify-content: flex-end
+
+    &__arrow
+        padding: 13px 17px
+        background-color: rgba(42, 42, 42, 0.15)
+
+.arrow-wrapper
+    width: 100%
+    display: flex
+
+.arrow
+    font-size: 22px
+    color: #000
+    &:hover
+        cursor: pointer
+        color: $accentColor
+
+.product-info
+    display: flex
+    flex-direction: column
+    align-items: center
+    width: 640px
+    border: 1px solid #EAEAEA
+    padding: 64px 250px
+    margin: 0 auto
+    margin-top: -64px
+    margin-bottom: 129px
+    background-color: #fff
+    position: relative
+    text-align: center
+
+    &__main
+        margin-bottom: 65px
+        border-bottom: 1px solid #EAEAEA
+
+    &__heading
+        margin-top: 12px
+        margin-bottom: 48px
+        +fontProp(18px, 300, 22px, #4D4D4D)
+        text-transform: uppercase
+
+    &__product-descrition
+        margin-bottom: 32px
+        +fontProp(14px, 300, 17px, #5E5E5E)
+
+    &__price
+        margin-bottom: 65px
+        +fontProp(24px, 300, 29px, $accentColorDark)
+        text-transform: uppercase
+
+    &__btn
+        display: flex
+        align-items: center
+        padding: 11px 56px 11px 23px
+        margin-top: 49px
+        &:hover
+            path
+                fill:#fff
+            
+
+    &__btn-icon
+        margin-right: 23px
+        path
+            fill: $accentColor
+            transition-duration: 0.5s
+
+.category-name
+    +fontProp(14px, 300, 17px, $accentColor)
+    text-transform: uppercase
+    &::after
+        content: ""
+        display: block
+        width: 63px
+        height: 3px
+        margin: 0 auto
+        margin-top: 12px
+        background-color: $accentColorDark
+
+.characteristics-categories
+    &__list
+        &:not(:last-of-type)
+            margin-right: 23px
+        
+.color-filter
+    &__item
+        display: flex
+
+    &__label
+        display: block
+        width: 26px
+        height: 13px
+        border-radius: 3px
+        margin-left: 15px
+        &:hover
+            cursor: pointer
+
+        &_black
+            background-color: #000
+        &_yellow
+            background-color: yellow
+        &_green
+            background-color: green

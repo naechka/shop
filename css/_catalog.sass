@@ -111,22 +111,16 @@ summary
 		&:hover
 			color: $accentColor
 
-.left-filters
+.filters-wrapper
 	display: flex
-	flex-grow: 2
 	justify-content: center
-	padding-top: 13px
-	&__filter
-		&:not(:last-of-type)
-			margin-right: 28px
-
+	&__filter-category
 		&[open]
-			.left-filters__name
+			.filters-wrapper__name
 				color: $accentColor
 				&::after
 					border-color: $accentColor
 					transform: rotate(135deg)
-					
 
 	&__name
 		display: flex
@@ -142,6 +136,7 @@ summary
 			height: 5px
 			transform: rotate(-45deg)
 			margin-left: 10px
+			margin-top: -2px
 			transition-property: transform
 			transition-duration: 0.5s
 
@@ -162,7 +157,15 @@ summary
 
 	&__item
 		+fontProp(14px, 400, 16px, #6F6E6E)
-		margin-bottom: 10px
+		&:not(:last-of-type)
+			margin-bottom: 10px
+
+.left-filters	
+	flex-grow: 2
+	padding-top: 13px
+	&__filter
+		&:not(:last-of-type)
+			margin-right: 28px	
 
 	&__label
 		display: flex
@@ -173,6 +176,3 @@ summary
 
 	&__input
 		margin-right: 10px
-
-
-

@@ -319,17 +319,17 @@ input:focus {
   cursor: pointer;
 }
 
-.show-more-btn {
-  margin: 0 auto;
-  margin-top: 18px;
-  text-transform: capitalize;
-}
-
-.show-more-btn:hover {
+.btn:hover {
   background-color: #F16D7F;
   color: #fff;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
+}
+
+.show-more-btn {
+  margin: 0 auto;
+  margin-top: 18px;
+  text-transform: capitalize;
 }
 
 .features {
@@ -726,34 +726,26 @@ summary::-webkit-details-marker {
   color: #F16D7F;
 }
 
-.left-filters {
+.filters-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 2;
-      -ms-flex-positive: 2;
-          flex-grow: 2;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-top: 13px;
 }
 
-.left-filters__filter:not(:last-of-type) {
-  margin-right: 28px;
-}
-
-.left-filters__filter[open] .left-filters__name {
+.filters-wrapper__filter-category[open] .filters-wrapper__name {
   color: #F16D7F;
 }
 
-.left-filters__filter[open] .left-filters__name::after {
+.filters-wrapper__filter-category[open] .filters-wrapper__name::after {
   border-color: #F16D7F;
   -webkit-transform: rotate(135deg);
           transform: rotate(135deg);
 }
 
-.left-filters__name {
+.filters-wrapper__name {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -768,7 +760,7 @@ summary::-webkit-details-marker {
   text-transform: uppercase;
 }
 
-.left-filters__name::after {
+.filters-wrapper__name::after {
   content: "";
   border-left: 2px solid #6F6E6E;
   border-bottom: 2px solid #6F6E6E;
@@ -777,6 +769,7 @@ summary::-webkit-details-marker {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
   margin-left: 10px;
+  margin-top: -2px;
   -webkit-transition-property: -webkit-transform;
   transition-property: -webkit-transform;
   transition-property: transform;
@@ -785,15 +778,15 @@ summary::-webkit-details-marker {
           transition-duration: 0.5s;
 }
 
-.left-filters__name:hover {
+.filters-wrapper__name:hover {
   color: #F16D7F;
 }
 
-.left-filters__name:hover::after {
+.filters-wrapper__name:hover::after {
   border-color: #F16D7F;
 }
 
-.left-filters__list {
+.filters-wrapper__list {
   position: absolute;
   z-index: 1;
   background-color: #fff;
@@ -807,13 +800,27 @@ summary::-webkit-details-marker {
   width: max-content;
 }
 
-.left-filters__item {
+.filters-wrapper__item {
   font-family: "Lato";
   font-size: 14px;
   font-weight: 400;
   line-height: 16px;
   color: #6F6E6E;
+}
+
+.filters-wrapper__item:not(:last-of-type) {
   margin-bottom: 10px;
+}
+
+.left-filters {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  padding-top: 13px;
+}
+
+.left-filters__filter:not(:last-of-type) {
+  margin-right: 28px;
 }
 
 .left-filters__label {
@@ -831,5 +838,183 @@ summary::-webkit-details-marker {
 
 .left-filters__input {
   margin-right: 10px;
+}
+
+.product-photo {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #F7F7F7;
+  padding-bottom: 64px;
+}
+
+.product-photo__arrow-wrapper-right {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.product-photo__arrow {
+  padding: 13px 17px;
+  background-color: rgba(42, 42, 42, 0.15);
+}
+
+.arrow-wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.arrow {
+  font-size: 22px;
+  color: #000;
+}
+
+.arrow:hover {
+  cursor: pointer;
+  color: #F16D7F;
+}
+
+.product-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 640px;
+  border: 1px solid #EAEAEA;
+  padding: 64px 250px;
+  margin: 0 auto;
+  margin-top: -64px;
+  margin-bottom: 129px;
+  background-color: #fff;
+  position: relative;
+  text-align: center;
+}
+
+.product-info__main {
+  margin-bottom: 65px;
+  border-bottom: 1px solid #EAEAEA;
+}
+
+.product-info__heading {
+  margin-top: 12px;
+  margin-bottom: 48px;
+  font-family: "Lato";
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 22px;
+  color: #4D4D4D;
+  text-transform: uppercase;
+}
+
+.product-info__product-descrition {
+  margin-bottom: 32px;
+  font-family: "Lato";
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 17px;
+  color: #5E5E5E;
+}
+
+.product-info__price {
+  margin-bottom: 65px;
+  font-family: "Lato";
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 29px;
+  color: #EF5B70;
+  text-transform: uppercase;
+}
+
+.product-info__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 11px 56px 11px 23px;
+  margin-top: 49px;
+}
+
+.product-info__btn:hover path {
+  fill: #fff;
+}
+
+.product-info__btn-icon {
+  margin-right: 23px;
+}
+
+.product-info__btn-icon path {
+  fill: #F16D7F;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.category-name {
+  font-family: "Lato";
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 17px;
+  color: #F16D7F;
+  text-transform: uppercase;
+}
+
+.category-name::after {
+  content: "";
+  display: block;
+  width: 63px;
+  height: 3px;
+  margin: 0 auto;
+  margin-top: 12px;
+  background-color: #EF5B70;
+}
+
+.characteristics-categories__list:not(:last-of-type) {
+  margin-right: 23px;
+}
+
+.color-filter__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.color-filter__label {
+  display: block;
+  width: 26px;
+  height: 13px;
+  border-radius: 3px;
+  margin-left: 15px;
+}
+
+.color-filter__label:hover {
+  cursor: pointer;
+}
+
+.color-filter__label_black {
+  background-color: #000;
+}
+
+.color-filter__label_yellow {
+  background-color: yellow;
+}
+
+.color-filter__label_green {
+  background-color: green;
 }
 /*# sourceMappingURL=style.css.map */

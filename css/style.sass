@@ -3,6 +3,7 @@
 $darkTextColor: #222
 $lightTextColor: #fff
 $accentColor: #F16D7F
+$accentColorDark: #EF5B70
 
 =fontProp($size, $weight, $lineHeight, $color, $family: 'Lato')
 	font-family: $family
@@ -201,15 +202,15 @@ input:focus
 	+fontProp(16px, 400, 19px, $accentColor)
 	cursor: pointer
 
-.show-more-btn
-	margin: 0 auto
-	margin-top: 18px
-	text-transform: capitalize
-
 	&:hover
 		background-color: $accentColor
 		color: $lightTextColor
 		transition-duration: 0.5s
+
+.show-more-btn
+	margin: 0 auto
+	margin-top: 18px
+	text-transform: capitalize
 
 .features
 	background-color: $darkTextColor
@@ -349,6 +350,7 @@ input:focus
 				fill: #fff
 
 @import 'catalog'
+@import 'product'
 
 
 // @media (max-width:1024px)
