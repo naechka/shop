@@ -6,6 +6,7 @@
 .cart-content
     width: 50%
     &__item
+        position: relative
         display: flex
         box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13)
         &:not(:last-of-type)
@@ -16,7 +17,16 @@
         margin-right: 31px
 
     &__description
-        flex-grow: 2
+        width: 33%
+
+    &__close
+        position: absolute
+        right: 22px
+        top: 28px
+        &:hover
+            cursor: pointer
+            path
+                fill: #575757 - #111
 
 .product-description
     &__heading
@@ -47,3 +57,75 @@
 
 .cart-forms
     width: 50%
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    margin-top: 18px
+
+.cart-address
+    display: flex
+    flex-direction: column
+    margin-bottom: 59px
+    &__heading
+        margin-bottom: 21px
+        +fontProp(16px, 300, 19px, $darkTextColor)
+
+    &__input
+        width: $elemWidth
+        box-sizing: border-box
+        border: 1px solid #A4A4A4
+        padding: 13px 17px
+        margin-bottom: 21px
+        +fontProp(13px, 300, 15px, $darkTextColor)
+        &:last-of-type
+            margin-bottom: 24px
+
+    &__btn
+        width: 101px
+        padding: 10px 14px
+        box-sizing: border-box
+        border: 1px solid #A4A4A4
+        +fontProp(11px, 300, 13px, #4A4A4A)
+        text-transform: uppercase
+        background-color: #fff
+        outline:none
+        &:focus
+            outline: none
+        &:hover
+            cursor: pointer
+
+.cost
+    width: $elemWidth
+    box-sizing: border-box
+    padding: 39px 43px 42px
+    background-color: #F5F3F3
+    text-align: right
+
+    &__cost-group
+        border-bottom: 1px solid #E2E2E2
+        margin-bottom: 17px
+
+    &__sub-total
+        margin-bottom: 12px
+        +fontProp(11px, 400, 13px, #4A4A4A)
+        text-transform: uppercase
+
+    &__grand-total
+        margin-bottom: 21px
+        +fontProp(16px, 300, 19px, $darkTextColor)
+
+    &__grand-price
+        font-weight: 700
+
+    &__btn
+        display: block
+        width: 100%
+        box-sizing: border-box
+        padding: 15px 42px
+        text-align: center
+        +fontProp(16px, 300, 19px, #fff)
+        text-transform: uppercase
+        background-color: $accentColor
+        transition: background-color, 0.3s
+        &:hover
+            background-color: $accentColorDark
