@@ -5,6 +5,7 @@ $lightTextColor: #fff
 $accentColor: #F16D7F
 $accentColorDark: #EF5B70
 $elemWidth: 360px
+$headerHeight: 75px
 
 =fontProp($size, $weight, $lineHeight, $color, $family: 'Lato')
 	font-family: $family
@@ -16,7 +17,12 @@ $elemWidth: 360px
 =linksSize()
 	display: block
 	line-height: 0
-	
+
+body
+	display: flex
+	flex-direction: column
+	min-height: 100vh
+
 *
 	margin: 0
 	padding: 0
@@ -37,7 +43,7 @@ input:focus
 	display: flex
 	justify-content: space-between
 	align-items: center
-	height: 75px
+	height: $headerHeight
 	background-color: $darkTextColor
 
 	&__list
@@ -46,6 +52,9 @@ input:focus
 
 	&__item:hover path
 		fill: $accentColor
+
+	&__link
+		display: block
 
 .header-left .header__item:not(:last-of-type)
 	margin-right: 40px
@@ -57,12 +66,80 @@ input:focus
 	display: flex
 	background-color: #F1E4E6
 	margin-bottom: 63px
+	height: 764px
+
+	&__img-block
+		width: 50%
+		background: rgba(113, 103, 105, 0.08)
 
 	&__img
-		width: 50%
+		width: 100%
+		height: 100%
+		object-fit: cover	
+
+.dropdown-menu
+	&.show
+		display: flex
+
+.dropdown-menu
+	position: absolute
+	right: 0
+	top: $headerHeight
+	display: none
+	justify-content: flex-end
+	width: 100%
+	background: rgba(0, 0, 0, 0.5)
+
+	&__wrapper
+		position: relative
+		width: 232px
+		box-sizing: border-box
+		padding: 37px 34px
+		min-height: 764px
+		background-color: #fff
+		box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21)
+
+	&__heading
+		margin-bottom: 24px
+		+fontProp(14px, 700, 17px, #000)
+		text-transform: uppercase
+
+	&__category-name
+		display: block
+		margin-bottom: 12px
+		+fontProp(14px, 400, 17px, $accentColor)
+		text-transform: uppercase
+		&:hover
+			color: $accentColorDark
+
+	&__list
+		padding-left: 20px
+		&:not(:last-of-type)
+			margin-bottom: 20px
+
+	&__item
+		&:not(:last-of-type)
+			margin-bottom: 11px
+
+	&__link
+		+fontProp(14px, 400, 17px, #6F6E6E)
+		&:hover
+			color: $accentColor
+
+	&__close-icon
+		position: absolute
+		top: 16px
+		right: 16px
+		width: 12px
+		height: 12px
+		&:hover
+			cursor: pointer
+			path
+				fill: #6F6E6E - #333
 
 .brand-content
 	align-self: center
+	width: 50%
 
 	&__header
 		margin-left: 64px
@@ -170,7 +247,7 @@ input:focus
 		display: none
 		border: 1px solid #fff
 		padding: 12px
-		background: url(img/add-to-cart.svg) no-repeat 13px center
+		background: url(../img/add-to-cart.svg) no-repeat 13px center
 		+fontProp(14px, 400, 17px, $lightTextColor)
 		cursor: pointer
 
@@ -246,12 +323,17 @@ input:focus
 
 .subscribe-section
 	display: flex
-	padding-bottom: 156px
-	background: #F4F4F4 url(img/subscribe_bg.png) no-repeat
+	align-items: center
+	min-height: 448px
+	background: #F4F4F4 url(../img/subscribe_bg.png) no-repeat
 
 	&__review
-		margin-top: 86px
-		width: 360px
+		width: 50%
+
+	&__review-wrapper
+		display: flex
+		flex-direction: column
+		width: $elemWidth
 
 	&__review-img
 		display: block
@@ -265,9 +347,7 @@ input:focus
 		text-align: center
 
 	&__subscribe
-		margin-top: 145px
-		margin-left: 223px
-		width: 557px
+		width: 50%
 
 
 .subscribe
@@ -282,12 +362,11 @@ input:focus
 		text-align: center
 
 	&__form
-		margin: 0 auto
-		margin-top: 23px
-		width: 100%
+		margin-top: 32px
+		display: flex
+		justify-content: center
 
 		input
-			padding: 7px 27px
 			border: none
 			font-size: 14px
 			line-height: 35px
@@ -299,8 +378,9 @@ input:focus
 		border: 0
 
 	&__inut
-		width: 66%
+		width: 256px
 		box-sizing: border-box
+		padding: 7px 27px
 		border-top-left-radius: 21px
 		border-bottom-left-radius: 21px
 		background-color: #E1E1E1
@@ -308,12 +388,20 @@ input:focus
 		opacity: 0.67
 
 	&__button
-		margin-left: -5px
+		width: 100px
+		box-sizing: border-box
+		padding: 7px 18px
 		background-color: $accentColor
 		border-top-right-radius: 21px
 		border-bottom-right-radius: 21px
 		color: $lightTextColor
 		cursor: pointer
+		transition: background-color, 0.3s
+		&:hover
+			background-color: $accentColorDark
+
+.footer-main
+	margin-top: auto
 
 .footer
 	display: flex
@@ -343,6 +431,9 @@ input:focus
 		justify-content: center
 		width: 100%
 		height: 100%
+		transition: background-color, 0.3s
+		path
+			transition: fill, 0.3s
 
 		&:hover
 			background-color: $accentColor
